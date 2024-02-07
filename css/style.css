@@ -1,0 +1,1234 @@
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Josefin+Sans:ital,wght@0,100;0,200;0,300;1,100;1,300&display=swap');
+
+/*
+font-family: 'Caprasimo', cursive;
+font-family: 'Josefin Sans', sans-serif;
+*/
+
+* {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 16px;
+}
+
+.site {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+/*************************************************/
+/*Topo*/
+.topoContato {
+    background: #34495e;
+}
+
+header div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header div ul {
+    display: flex;
+
+}
+
+header div a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 2em;
+}
+
+header div a:nth-child(2) {
+
+    margin-left: -25%;
+}
+
+.topoRedeSocial li a {
+    padding: 12px 30px;
+    display: block;
+    text-indent: -9999px;
+    /*tag para fazer camada onde possibilita colocar atras de elementos*/
+    margin-right: 10px;
+    margin: 9px 10px 9px 0;
+    font-size:2em;
+}
+
+.topoRedeSocial li:nth-child(1) a {
+    background: url(../img/iconeFacebook.svg) no-repeat;
+}
+
+.topoRedeSocial li:nth-child(2) a {
+    background: url(../img/insta40ico.png) no-repeat;
+}
+
+.topoRedeSocial li:nth-child(3) a {
+    background: url(../img/whats40ico.png) no-repeat;
+}
+
+
+
+/*e possivel usar pseudo classe onde permite selecionar um elementro dentro de um bloco*/
+.topoRedeSocial li:last-child a {
+    margin-right: 0px;
+
+}
+
+/*inicio do topo 2*/
+header div:nth-child(2) {
+    padding: 0.5% 0;
+}
+
+header div h1 {
+    background: url(../img/logoVivaBem.svg) no-repeat;
+    padding: 40px 100px;
+    display: block;
+    text-indent: -9999px;
+    /*tag para fazer camada onde possibilita colocar atras de elementos*/
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.menu ul {
+    margin-left: -20%;
+}
+
+.menu ul li {
+    padding: 10px 0;
+}
+
+
+.menu a {
+    color: #34495e;
+    text-transform: uppercase;
+    font-size: 1.5em;
+    display: block;
+    margin: 0 15px;
+    font-family: 'Caprasimo', cursive;
+    font-size: 2em;
+}
+
+.menu a:hover {
+    color: #00bdd5;
+}
+
+.ativo {
+    color: #00bdd5 !important;
+}
+
+.subMenu ul {
+    display: none;
+}
+
+.subMenu:hover ul {
+    z-index: 1;
+    display: block;
+    position: absolute;
+    margin-left: 15px;
+    background: rgba(204, 204, 204, 0.8);
+    border-radius: 0 10px 0 10px;
+
+}
+
+.subMenu ul li a {
+    color: #34495e;
+    text-transform: capitalize;
+    font-size: 1.2em;
+}
+
+.menu button {
+    background: url(../img/login80ico.png) no-repeat;
+    background-size: cover;
+    text-indent: -9999px;
+    border: 0;
+    padding: 20px 28px;
+
+}
+
+/*Menu Fixo*/
+.menufixo {
+    position: fixed;
+    z-index: 9999;
+    margin: 0 auto;
+    width: 100%;
+    top: 0;
+    background: rgb(255, 255, 255, 0.8);
+    animation: fadeIn 2s ease-in-out;
+}
+
+/**.menufixo .topoContato {
+   
+}*/
+
+/**********************************************************************************/
+/* seção do banner pagina home*/
+
+.banner img {
+    width: 100%;
+}
+
+.banner .slick-next {
+    right: 40px;
+}
+
+.banner .slick-prev:before,
+.banner .slick-next:before {
+    font-size: 40px;
+    color: rgb(201, 221, 19);
+}
+
+.banner .slick-prev {
+    left: 25px;
+    z-index: 1;
+}
+
+.banner .slick-dots {
+    bottom: 25px;
+}
+
+.banner.slick-dots li {
+    margin: 0 20px;
+}
+
+.slick-dots li button:before {
+    font-size: 40px;
+    color: rgb(190, 202, 17);
+}
+
+.slick-dots li.slick-active button:before {
+    opacity: .75;
+    color: rgb(45, 159, 187);
+}
+
+
+/*seção sobre pagina home*/
+
+.contSobre {
+    padding: 50px 0;
+    text-align: center;
+}
+
+.contSobre h2 {
+    color: #34495e;
+    text-transform: uppercase;
+    font-size: 1.8em;
+    font-family: 'Caprasimo', cursive;
+    margin-bottom: 20px;
+}
+
+.contSobre div div {
+    display: flex;
+    justify-content: space-around;
+}
+
+.contSobre div div div {
+    width: 48%;
+    padding: 0 25px;
+}
+
+.contSobre img {
+    width: 100%;
+    border-radius: 50px 0px 0px 50px;
+}
+
+.contSobre div div div:nth-child(1) {
+    padding-left: 25px;
+}
+
+.contSobre div div div:nth-child(2) {
+    flex-direction: column;
+    padding-right: 25px;
+    justify-content: space-between;
+    background: #48c9b0;
+    border-radius: 0px 50px 50px 0px;
+}
+
+.contSobre p {
+    text-align: justify;
+    color: #fff;
+    font-size: 1.2em;
+    line-height: 1.8em;
+    text-indent: 2em;
+    margin-top: 3%;
+}
+
+.contSobre button {
+    align-self: flex-end;
+    padding: 20px 50px;
+    border-radius: 10px;
+    border: none;
+    font-size: 1.2em;
+    margin-bottom: 25px;
+    cursor: pointer;
+}
+
+.contSobre button:hover {
+    background: #f1c40f;
+    color: #34495e;
+}
+
+/*******************************************/
+.sobrePag {
+    padding: 50px 0;
+    text-align: center;
+    padding-right: 25px;
+
+}
+
+.sobrePag div div {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row-reverse;
+}
+
+.sobrePag div div {
+    width: 98%;
+}
+
+.sobrePag div div:nth-child(2) {
+    flex-direction: column;
+    padding: 25px;
+    justify-content: space-between;
+    background: #48c9b0;
+    border-radius: 50px 0px 0px 50px;
+}
+
+
+
+.sobrePag div div:nth-child(1) {
+    width: 90%;
+    padding: 0 25px;
+}
+
+.sobrePag div div div:nth-child(1) {
+    flex-direction: column;
+
+}
+
+.sobrePag div div div:nth-child(2) {
+    padding-left: 25px;
+
+}
+
+.sobrePag div div div:nth-child(1) {
+
+    flex-direction: column;
+
+}
+
+.sobrePag p {
+    text-align: justify;
+    color: #fff;
+    font-size: 1.2em;
+    line-height: 1.8em;
+    text-indent: 2em;
+    margin-top: 3%;
+}
+
+
+/************IMAGE*************/
+.sobrePag img {
+    width: 100%;
+    padding-left: 73px;
+
+}
+
+
+/*inicio do serviços*************************/
+.contServico {
+    padding: 50px 0;
+    text-align: center;
+    background: #34495e;
+}
+
+.contServico h2 {
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 1.8em;
+    font-family: 'Caprasimo', cursive;
+    margin-bottom: 20px;
+
+}
+
+.contServico h3 {
+    color: #34495e;
+    font-size: 1.8em;
+    font-family: 'Caprasimo', cursive;
+    margin-bottom: 20px;
+    margin: 0 0 10px;
+}
+
+
+.contServico div {
+
+    display: flex;
+    justify-content: space-around;
+}
+
+.contServico div div {
+    width: 48%;
+    padding: 0px 25px;
+}
+
+.contServico div img {
+    margin-top: 0px;
+    align-items: center;
+    width: 100%;
+    border-radius: 10px 10px;
+}
+
+.contServico div div {
+    flex-direction: column;
+    padding-left: 20px;
+    padding-right: 20px;
+    justify-content: space-between;
+    background: #48c9b0;
+    border-radius: 0px 0px 0px 0px;
+    margin: 10px;
+}
+
+.contServico div p {
+    margin-top: 10px;
+    text-align: justify;
+    font-size: 1.2em;
+    line-height: 1.2em;
+    text-indent: 2em;
+    background: #34495e;
+    color: hwb(0 100% 0%);
+}
+
+.contServico button {
+    margin-top: 15px;
+    align-self: center;
+    padding: 10px 10px;
+    border-radius: 10px;
+    border: none;
+    font-size: 1.2em;
+    margin-bottom: 25px;
+    cursor: pointer;
+    background: #f1c40f;
+    color: hsl(0, 0%, 0%);
+}
+
+.contServico button:hover {
+    background: #fff;
+    color: #2c2b2b;
+}
+
+/**********************************************************/
+/*galeria*/
+
+.galeria {
+    background: #f1c40f;
+    padding: 40px 0;
+}
+
+.galeria img {
+    border-radius: 10px;
+    margin: 0 10px;
+}
+
+.galeria .slick-next {
+    right: 40px;
+    color: #00bdd5;
+}
+
+.galeria .slick-prev:before,
+.galeria .slick-next:before {
+    font-size: 40px;
+    color: #00bdd5;
+}
+
+.galeria .slick-prev {
+    left: 25px;
+    z-index: 1;
+}
+
+.galeria .slick-dots {
+    bottom: 25px;
+}
+
+.galeria.slick-dots li {
+    margin: 0 20px;
+}
+
+.slick-dots li button:before {
+    font-size: 40px;
+    color: #00bdd5;
+}
+
+.slick-dots li.slick-active button:before {
+    opacity: .75;
+    color: #00bdd5;
+}
+
+/*######################### EQUIPE #########################*/
+.contEquipe {
+    padding: 50px 0;
+    text-align: center;
+    background: #34495e;
+}
+
+.contEquipe h2 {
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 1.8em;
+    font-family: 'Caprasimo', cursive;
+    margin-bottom: 20px;
+}
+
+.contEquipe div {
+    display: flex;
+    justify-content: space-around;
+}
+
+
+.contEquipe div div {
+    flex-direction: column;
+    background: rgb(255, 255, 255);
+    margin: 10px;
+}
+
+.contEquipe a {
+    color: #51b9b9;
+}
+
+.contEquipe ul {
+    display: flex;
+    justify-content: space-around;
+    margin-top: -30px;
+    margin-bottom: 20px;
+}
+
+.contEquipe li {
+    background: #f1c40f;
+}
+
+.contEquipe li:hover {
+    background: #00bdd5;
+}
+
+.contEquipe li a {
+    padding: 20px 20px;
+    margin: 2px;
+    display: block;
+    text-indent: -9999px;
+    position: relative;
+    top: 15%;
+    left: 0%;
+}
+
+.contEquipe li:nth-child(1) a {
+    background: url(../img/iconeFaceBranco.svg) no-repeat;
+    padding: 12px 20px;
+    left: 20%;
+}
+
+.contEquipe li:nth-child(2) a {
+    background: url(../img/iconeInstaBranco.svg) no-repeat;
+}
+
+.contEquipe li:nth-child(3) a {
+    background: url(../img/iconeLinkedinBranco.svg) no-repeat;
+}
+
+.contEquipe li:nth-child(4) a {
+    background: url(../img/iconeWhatsBranco.svg) no-repeat;
+}
+
+
+.contEquipe h3 {
+    color: #34495e;
+    font-size: 1.5em;
+    font-family: 'Caprasimo', cursive;
+    margin-bottom: 10px;
+}
+
+.contEquipe h4 {
+    color: #34495e;
+    font-size: 1.2em;
+    font-family: 'Caprasimo', cursive;
+    margin-bottom: 10px;
+}
+
+/**********************************************/
+/*destaque*/
+.destaque {
+    padding: 50px 0;
+    background: url(../img/fundoDestaque.png) no-repeat;
+    text-align: center;
+}
+
+.destaque div {
+    background: url(../img/destaque.png);
+    padding: 165px 0;
+}
+
+.destaque a {
+    display: block;
+}
+
+.destaque img {
+    width: 5%;
+}
+
+
+/*****************************************/
+/*****   rodape *******/
+.rodape {
+    text-align: center;
+}
+
+.rodape section:nth-child(1) {
+    padding: 50px 0;
+    background: #ffffff;
+}
+
+.rodape section div {
+    display: flex;
+    justify-content: space-around;
+}
+
+.rodape section div div {
+    flex-direction: column;
+    width: 50%;
+}
+
+/*Info academia*/
+.infoAcademia img {
+    width: 40%;
+    margin: 0 auto;
+}
+
+.infoAcademia ul {
+    display: flex;
+    justify-content: center;
+    margin: 5% 0;
+}
+
+.infoAcademia li {
+    margin: 0 2%;
+}
+
+.infoAcademia ul li a {
+    display: block;
+    width: 70px;
+}
+
+.infoAcademia ul li a img {
+    width: 100%;
+}
+
+.infoAcademia a {
+    color: #2c2b2b;
+    text-decoration: none;
+    margin-bottom: 3%;
+    font-size: 1.5em;
+}
+
+.infoAcademia table {
+    width: 80%;
+    margin: 0 auto;
+    font-size: 1.5em;
+    color: #34495e;
+}
+
+.infoAcademia table tr td {
+    padding: 2% 0;
+}
+
+.infoAcademia table tr td:nth-child(1) {
+    width: 50%;
+    vertical-align: middle;
+}
+
+/*Politicas*/
+.politicas h2 {
+    font-size: 3em;
+    font-weight: bold;
+    color: #34495e;
+    font-family: 'Caprasimo', cursive;
+}
+
+.politicas p {
+    text-align: justify;
+    text-indent: 1.8em;
+    color: #34495e;
+    font-size: 1.2em;
+    width: 75%;
+    font-weight: 600;
+    margin: 0 auto;
+    line-height: 1.2em;
+}
+
+.politicas h3 {
+    color: #34495e;
+    font-weight: 600;
+    font-size: 1.8em;
+    margin: 2%;
+}
+
+.rodape section:nth-child(2) {
+
+    background: #48c9b0;
+}
+
+.rodape section:nth-child(3) {
+
+    background: #34495e;
+}
+
+.rodape section:nth-child(2) h2 {
+    color: #000;
+    padding: 15px;
+}
+
+
+.rodape section:nth-child(3) h2 {
+    color: #fff;
+    padding: 15px;
+}
+
+/******************************************************************/
+/************PAGINA SOBRE*****************/
+
+
+
+
+/*************************PAGINA CONTATO*********************/
+.contato {
+    padding: 50px 0;
+    text-align: center;
+}
+
+.contato h2 {
+    text-transform: uppercase;
+    color: #34495e;
+    font-size: 1.8em;
+    font-family: 'Caprasimo', cursive;
+    margin-bottom: 20px;
+}
+
+.contato h4 {
+    color: #34495e;
+    font-size: 1.2em;
+    font-family: 'Caprasimo', cursive;
+    text-transform: uppercase;
+
+}
+
+.contato form {
+    display: flex;
+    background: #48c9b0;
+    border-radius: 50px;
+    justify-content: space-around;
+    padding: 4% 1.5%;
+}
+
+.contato form div {
+    width: 45%;
+}
+
+.contato form div div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.contato form label {
+    color: #34495e;
+    font-size: 1.8em;
+    margin-bottom: 2%;
+}
+
+.contato form input,
+.contato form textarea {
+    color: #34495e;
+    border: solid 1px #34495e;
+    padding: 0.5em;
+    margin-bottom: 4%;
+
+}
+
+.contato form textarea {
+    resize: none;
+    height: 151px;
+
+}
+
+.btnContato {
+
+    justify-content: space-between;
+    flex-direction: row !important;
+}
+
+.contato form input[type="submit"],
+.contato form input[type="button"] {
+    background: #f1c40f;
+    width: 40%;
+    cursor: pointer;
+    border-radius: 10px;
+    border: none;
+}
+
+.contato form input[type="submit"]:hover,
+.contato form input[type="button"]:hover {
+    background: #34495e;
+    color: #f1c40f;
+}
+
+
+/********************************************************/
+
+.blocoCad {
+    display: flex;
+}
+
+.cabecaCad {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 25px;
+}
+
+.logoCad {
+    justify-content: flex-start;
+    width: 150px;
+}
+
+.loginCad {
+    margin-left: 44em;
+}
+
+h1 {
+    color: #34495e;
+    font-size: 1.8em;
+    font-family: 'Caprasimo', cursive;
+    margin-bottom: 20px;
+    margin-top: -2%;
+    text-align: center
+}
+
+
+h3 {
+    vertical-align: inherit;
+    color: #00bdd5
+}
+
+.conteudoCad {
+    display: flex;
+    justify-content: space-between;
+}
+
+.conteudoCad div {
+    background: #34495e;
+    width: 100%;
+    height: 860px;
+    margin-top: 1%;
+}
+
+.BOX{
+    width: 100%;
+}
+
+.box th {
+    background: #51b9b9;
+    width: 250px;
+    height: 83px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.conteudoCad div:nth-child(2) ul {
+    display: flex;
+    
+}
+
+.conteudoCad div:nth-child(2) ul li {
+    color: #34495e;
+    padding: 11px;
+}
+
+
+
+.conteudoCad ul li {
+    list-style: none;
+    text-align: center;
+    padding: 12px;
+    padding-top: 2px;
+}
+
+.conteudoCad a {
+    text-decoration: none;
+}
+
+.conteudoCad a {
+    color: aqua;
+}
+
+.conteudoCad a:hover {
+    color: #f1c40f;
+}
+
+
+/****************************************************************/
+/*PAGINA CADASTRAR EXERCICIO**/
+/*------------Começo do Cadastro Exercicios---------*/
+
+
+
+
+
+/******************************************/
+/*------------Começo do Cadastro Exercicios---------*/
+.textoForme{
+    font-size: 2.3em;
+  
+}
+.formulario-exercicio{
+    display: flex;
+    margin: 5%;
+    background: #48c9b0;
+    border-radius: 40px;
+    padding: 2%;
+}
+ 
+.formulario-exercicio label,legend  {
+
+    font-weight: bold;
+    text-transform: uppercase;
+}
+ 
+.formulario-exercicio input{
+    color: #34495e;
+    border: solid 2px #34495e;
+}
+ .foto-exercicio img{
+    width: 300%;
+    max-width: 300px;
+
+ }
+ 
+.foto-exercicio{
+    width: 50%;
+    margin: 2%;
+   
+}
+ 
+.foto-exercicio input{
+    height: 500px;
+}
+ 
+ 
+.nome-exercicio{
+    margin-right: 5%;
+    width: 50%;
+}
+ 
+ 
+.formulario-exercicio fieldset div:nth-child(1){
+    width: 20%;
+}
+ 
+.formulario-exercicio fieldset div:nth-child(2){
+    width: 80%;
+}
+ 
+ 
+.nome-exercicio div:nth-child(5){
+    display: flex;
+    justify-content: flex-end;
+}
+
+/**************************************************************************************/
+/*******Cadatro pagina Aluno******/
+/*/CadastAform form{
+    display: flex;
+    flex-direction: column;
+}**/
+
+.foto-exercicio1{
+    width: 30%;
+    margin: 2%;
+}
+
+.form-control2{
+    width: 90%;
+}
+
+
+
+/**************************************************************************************/
+
+
+footer {
+    text-align: center;
+}
+
+footer section:nth-child(1) {
+    background: #48c9b0;
+}
+
+footer section:nth-child(2) {
+
+    background: #34495e;
+}
+
+footer section:nth-child(1) h2 {
+    color: #000;
+    padding: 15px;
+}
+
+
+footer section:nth-child(2) h2 {
+    color: #fff;
+    padding: 15px;
+}
+
+/************************************************/
+/*             PAGINA LOGIN                    */
+:root {
+    font-size: 62.5%;
+    --default-border:0.1rem solid rgba(0, 0, 0.15);
+    --default-border-radius:1.2rem;
+}
+
+.contente {
+    display: grid;
+    grid-template-areas:
+    ". . . . ."
+    ". hero . form ."
+    ". hero . form ."
+    ". . . . ."
+    ;
+    gap: 8.5rem;
+}
+.formulImg img{
+padding-top: 10%;
+}
+
+.formulImg h1{
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 6.25em;
+    font-weight: 500;
+    line-height: 75px;
+    padding-top: 60%;
+}
+
+ h1 span, h2 span {
+    color:#f1c40f;
+}
+
+.formulImg{
+    grid-area: hero;
+}
+
+/*********/
+.formularLogin{
+    grid-area: form;
+}
+.formularLogin{
+    width: 60rem;
+    height: 55rem;
+    border:var(--default-border);
+    padding: 4.4rem 5.7rem;
+    border-radius:var(--default-border-radius);
+    position: relative;
+}
+
+.formularLogin h2{
+    max-width: 43rem;
+    font-size: 3.6rem;
+    font-weight: 500;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.formularLogin #loginForm{
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.formularLogin  button{
+    text-decoration: none;
+    border-radius: 1.2rem;
+    font-size: 2.4rem;
+    height: 5.5rem;
+    background-color: #f1c40f;
+    color: aliceblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5.4rem;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.formularLogin .action button + button{
+    background-color:#34495e;
+    margin-top: 4.8rem;
+}
+
+.formularLogin footer p{
+    font-size: 1.4rem;
+    margin-top: 8rem;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.formularLogin header{
+    display: flex;
+    gap: 0  1.8rem;
+    align-items: center;
+}
+
+
+.formularLogin form{
+    margin-top: 1.6rem;
+}
+
+.formularLogin form label{
+    font-size: 1.8rem;
+    font-weight:400;
+    display: block;
+    padding: 1%;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+
+.formularLogin form input {
+    width: 586px;
+    height:5.5rem;
+    background:#fff;
+    border:var(--default-border);
+    border-radius:var(--default-border-radius);
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.formularLogin form .points{
+    position: relative;
+}
+
+/*******************************************/
+/*          login admin             */
+
+:root {
+    font-size: 62.5%;
+    --default-border:0.1rem solid rgba(0, 0, 0.15);
+    --default-border-radius:1.2rem;
+    
+}
+
+.contenteADMIN{
+    display: grid;
+    grid-template-areas:
+    ". . . . ."
+    ". hero . form ."
+    ". hero . form ."
+    ". . . . ."
+    ;
+    gap: 8.5rem;
+   
+}
+.formulImgAdmin img{
+padding-top: 10%;
+width: 100%;
+}
+
+
+.formulImgAdmin h1{
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 6.25em;
+    font-weight: 500;
+}
+
+ h1 span, h2 span {
+    color:#f1c40f;
+}
+
+.formulImgAdmin{
+    grid-area: hero;
+}
+
+/*********/
+.formularLoginAdmin{
+    grid-area: form;
+}
+.formularLoginAdmin{
+    width: 60rem;
+    height: 65rem;
+    border:var(--default-border);
+    padding: 4.4rem 5.7rem;
+    border-radius:var(--default-border-radius);
+    position: relative;
+    background-color: #51b9b9;
+}
+
+
+
+.formularLoginAdmin #loginForm{
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.formularLoginAdmin  button{
+    text-decoration: none;
+    border-radius: 1.2rem;
+    font-size: 2.4rem;
+    height: 5.5rem;
+    background-color: #f1c40f;
+    color: aliceblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5.4rem;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.formularLoginAdmin  button + button{
+    background-color:#34495e;
+    margin-top: 4.8rem;
+}
+
+.formularLoginAdmin footer p{
+    font-size: 1.4rem;
+    margin-top: 8rem;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.formularLoginAdmin header{
+    display: flex;
+    gap: 0  1.8rem;
+    align-items: center;
+}
+
+
+.formularLoginAdmin form{
+    margin-top: 1.6rem;
+}
+
+.formularLoginAdmin form label{
+    font-size: 1.8rem;
+    font-weight:400;
+    display: block;
+    padding: 1%;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+
+.formularLoginAdmin form input {
+    width: 586px;
+    height:5.5rem;
+    background:#fff;
+    border:var(--default-border);
+    border-radius:var(--default-border-radius);
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.formularLoginAdmin form .points{
+    position: relative;
+}
+
+

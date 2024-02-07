@@ -1,0 +1,340 @@
+/**Definimos intervalo para cada dispositivos */
+
+
+
+
+/****************************************************/
+/* Nots 
+
+*****************************************************/
+
+
+/*****************************************************/
+/* Tablets 
+601 ate 768px
+******************************************************/
+@media (max-width: 1000px) {
+    header div:nth-child(2) {
+        flex-direction: column;
+    }
+
+    .menu {
+        justify-content: space-around;
+        width: 100%;
+    }
+
+    .menu ul {
+        margin-left: 0;
+    }
+
+    .contSobre p {
+        font-size: 1.2em;
+        line-height: 1.2em;
+    }
+
+
+    .contEquipe div {
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .contEquipe div div {
+        width: 30%;
+        margin: 2% 5%;
+    }
+
+
+    .destaque div {
+        padding: 145px 0;
+    }
+
+    .destaque img {
+        width: 10%;
+        margin-left: 23%;
+    }
+}
+
+
+
+
+/*****************************************************/
+/* Smartphones
+0 ate 600px
+******************************************************/
+
+@media not all and (max-width: 600px) {
+
+    .abrir-menu,
+    .fechar-menu {
+        display: none;
+    }
+
+}
+
+/****************TOPO 1********/
+
+@media (max-width: 600px) {
+
+    /**Topo**/
+    .topoContato {
+        padding: 2%;
+    }
+
+    header div:nth-child(1) {
+        flex-direction: column;
+    }
+
+    header div:nth-child(2) {
+        flex-direction: row;
+    }
+
+    header div a:nth-child(1) {
+        margin-bottom: 2%;
+    }
+
+    header div a:nth-child(2) {
+        margin-left: 0;
+    }
+
+    /*********INICIO DO TOPO 2******/
+    header h1 {
+        margin-left: 2%;
+    }
+
+    /***************MENU********************/
+    .menu {
+        background: rgba(241, 196, 15, 0.8);
+        height: 100%;
+        position: fixed;
+        z-index: 10;
+        width: 50%;
+        max-width: 300px;
+        top: 0;
+        margin: 0;
+        right: -300px;
+        transition: right .5s ease-out;
+    }
+
+    .abrir-menu {
+        background: url(../img/btnAbrir.png);
+        background-size: cover;
+        padding: 20px;
+        border: 0;
+        display: block;
+        margin-right: 2%;
+    }
+
+    .menu-mobile .menu {
+        right: 0px;
+    }
+
+    .menu .fechar-menu {
+        background: url(../img/btnFechar.png);
+        background-size: cover;
+        padding: 10%;
+        border: 0;
+        display: block;
+        margin: 4%;
+
+
+    }
+
+    .menu {
+
+        flex-direction: column;
+        justify-content: start;
+    }
+
+    .menu ul {
+        flex-direction: column;
+        margin-left: 0;
+    }
+
+    .subMenu:hover ul {
+        position: relative;
+    }
+
+    .subMenu ul li a {
+        color: #34495e;
+        text-transform: capitalize;
+        font-size: 1.2em;
+    }
+
+    .menu button {
+        width: 0;
+        margin: 0 auto;
+    }
+
+
+    /***********BANNER**************/
+    .banner {
+        display: none;
+    }
+
+    /***********CONTE SOBRE***************/
+    .contSobre {
+        padding: 25px 0;
+    }
+
+    .contSobre h2 {
+        font-size: 1.8em;
+        margin-bottom: 20px;
+    }
+
+    .contSobre div div {
+        flex-direction: column;
+        margin: 0 auto;
+    }
+
+    .contSobre div div div {
+        width: 90%;
+        padding: 0;
+    }
+
+    .contSobre img {
+        border-radius: 50px 50px 0 0;
+        margin-bottom: 2%;
+    }
+
+    .contSobre div div div:nth-child(1) {
+        padding-left: 0;
+    }
+
+    .contSobre div div div:nth-child(2) {
+        padding-right: 0;
+        border-radius: 0 0 50px 50px;
+    }
+
+    .contSobre p {
+        font-size: 1.2em;
+        line-height: 1.8em;
+        padding: 5%;
+    }
+
+    .contSobre button {
+        margin-right: 5%;
+    }
+
+    /************************/
+    .sobrePag {
+        padding: 25px 0;
+    }
+
+    .sobrePag h2 {
+        font-size: 1.8em;
+        margin-bottom: 20px;
+    }
+
+    .sobrePag div div {
+        flex-direction: column;
+        margin: 0 auto;
+    }
+
+    .sobrePag div div div {
+        width: 90%;
+        padding: 0;
+    }
+
+    .sobrePag img {
+        border-radius: 50px 50px 0 0;
+        margin-bottom: 2%;
+    }
+
+    .sobrePag div div div:nth-child(1) {
+        padding-left: 0;
+    }
+
+    .sobrePag div div div:nth-child(2) {
+        padding-right: 0;
+        border-radius: 0 0 50px 50px;
+    }
+
+    .sobrePag p {
+        font-size: 1.2em;
+        line-height: 1.8em;
+        padding: 5%;
+    }
+
+
+    /**********************************/
+    .contServico {
+        padding: 25px 0;
+
+    }
+
+    .contServico h2 {
+        color: #ffffff;
+        text-transform: uppercase;
+        font-size: 1.8em;
+        font-family: 'Caprasimo', cursive;
+        margin-bottom: 20px;
+
+    }
+
+    .contServico h3 {
+        font-size: 1.8em;
+        margin-bottom: 20px;
+    }
+
+
+    .contServico div {
+        flex-direction: column;
+    }
+
+    .contServico div div {
+        width: 95%;
+        padding: 2%;
+        margin-bottom: 2%;
+    }
+
+
+
+    .contServico div div {
+        flex-direction: column;
+        width: 93%;
+        padding: 2%;
+
+    }
+
+    /*************GALERIA***********************/
+    .galeria .slick-center {
+        transform: scale(1);
+        padding: 0;
+    }
+
+    /*******************Equipe***************************/
+    .contEquipe {
+        display: none;
+    }
+
+    /****************Destaque*******************************/
+    .destaque {
+        display: none;
+    }
+
+    /*******************RODAPE*********************************/
+
+
+    .rodape section:nth-child(1) {
+        padding: 20px 0;
+    }
+
+    .rodape section div {
+        flex-direction: column;
+    }
+
+    .rodape section div div {
+
+        width: 95%;
+    }
+
+
+
+    /*Politicas*/
+    .politicas {
+        margin-top: 5%;
+    }
+
+}
+
+/*FIM DO MEDIA ATÉ 600 */
