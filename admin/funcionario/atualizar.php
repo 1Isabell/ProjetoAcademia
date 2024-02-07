@@ -4,7 +4,7 @@ $id = $_GET["id"];
 //acessando os metodos da classe
 require_once("class/instrutor.php");
 
-$funcionaros = new  InstrutorClass($id);
+$funcionarios = new  InstrutorClass($id);
 
 
  
@@ -27,10 +27,10 @@ if (isset($_POST['  nomeFuncionario'])){
     //empty faz a verificação se a var e vazia ou não
     // ! inverte a verificação se não for vazio
 
-    if (!empty($_FILES['$fotoFuncionario']['name'])) {
+    if (!empty($_FILES['fotoFuncionario']['name'])) {
         //FOTO 
 
-        $arquivo = $_FILES['fotoAluno'];
+        $arquivo = $_FILES['fotoFuncionario'];
 
         //Responsável de fazer o upload da imagem que está no diretório raiz para o banco de dados, onde caso não for encontrado irá mostrar erro 
         // Um caso para cada situação 
@@ -38,42 +38,42 @@ if (isset($_POST['  nomeFuncionario'])){
             throw new Exception('Error' . $arquivo['error']);
         }
         if(move_uploaded_file($arquivo['tmp_name'], '../img/funcionario/' . $arquivo['name'])){
-            $fotoAluno = 'funcionario/' . $arquivo['name']; 
+            $fotoFuncionario = 'funcionario/' . $arquivo['name']; 
         } else {
             throw new Exception('Erro; não foi possivel realizar o upload da imagem.');
         }
 
 }
  else{
-    $fotoFuncionario = $instrutor->$fotoFuncionario;
+    $fotoFuncionario = $instrutor->fotoFuncionario;
 }
 
-$funcionaros = new InstrutorClass();
+$funcionarios = new InstrutorClass();
 
-$funcionaros ->nomeFuncionario = $nomeFuncionario;
-$funcionaros -> dataNascFuncionario = $dataNascFuncionario ('Y-m-d');
-$funcionaros ->emailFuncionario = $emailFuncionario ;
-$funcionaros ->cargoFuncionario = $cargoFuncionario;
-$funcionaros ->especialidadeFuncionario = $especialidadeFuncionario;
-$funcionaros ->senhaFuncionario = $senhaFuncionario;
-$funcionaros ->dataAdmissaoFuncionario = $dataAdmissaoFuncionario ('Y-m-d');
-$funcionaros ->statusFuncionario = $statusFuncionario;
-$funcionaros ->fotoFuncionario  = $fotoFuncionario ;
-$funcionaros ->linkFaceFuncionario = 	$linkFaceFuncionario;
-$funcionaros ->linkInstaFuncionario = $linkInstaFuncionario;
-$funcionaros ->linkLinkedinFuncionario = $linkLinkedinFuncionario;
-$funcionaros ->linkWhatsFuncionario = $linkWhatsFuncionario;
+$funcionarios ->nomeFuncionario = $nomeFuncionario;
+$funcionarios -> dataNascFuncionario = $dataNascFuncionario ('Y-m-d');
+$funcionarios ->emailFuncionario = $emailFuncionario ;
+$funcionarios ->cargoFuncionario = $cargoFuncionario;
+$funcionarios ->especialidadeFuncionario = $especialidadeFuncionario;
+$funcionarios ->senhaFuncionario = $senhaFuncionario;
+$funcionarios ->dataAdmissaoFuncionario = $dataAdmissaoFuncionario ('Y-m-d');
+$funcionarios ->statusFuncionario = $statusFuncionario;
+$funcionarios ->fotoFuncionario  = $fotoFuncionario ;
+$funcionarios ->linkFaceFuncionario = 	$linkFaceFuncionario;
+$funcionarios ->linkInstaFuncionario = $linkInstaFuncionario;
+$funcionarios ->linkLinkedinFuncionario = $linkLinkedinFuncionario;
+$funcionarios ->linkWhatsFuncionario = $linkWhatsFuncionario;
 
 //chama o método inserir do banco de dados com os valores rece
 
- $funcionaros -> Atualizar();
+ $funcionarios -> Atualizar();
 
 }
 ?>
 
 <section>
     
-<form class="formulario-exercicio" action="index.php?p=instrutor&i=atualizar&id=<?php echo $funcionaros->idFuncionario ?>"
+<form class="formulario-exercicio" action="index.php?p=instrutor&i=atualizar&id=<?php echo $funcionarios->idFuncionario ?>"
  method="POST" enctype="multipart/form-data">
 
 
@@ -91,14 +91,14 @@ $funcionaros ->linkWhatsFuncionario = $linkWhatsFuncionario;
         <div class="mb-3">
             <label for="nomeFuncionario" class="form-label">Nome do Funcionario:</label>
             <input type="text" class="form-control"
-            value="<?php echo $funcionaros->nomeFuncionario; ?>" 
+            value="<?php echo $funcionarios->nomeFuncionario; ?>" 
             name="nomeFuncionario" id="nomeFuncionario" require placeholder="Nome do Funcionario">
         </div>
 
         <div class="form-group">
             <label for="dataNascFuncionario">Data de Nascimemto</label>
             <input type="date" class="form-control2"
-            value="<?php echo $funcionaros->dataNascFuncionario; ?>" 
+            value="<?php echo $funcionarios->dataNascFuncionario; ?>" 
             id="dataNascFuncionario" name="dataNascFuncionario"  id="formGroupExampleInput" placeholder="Informe sua Data de Nascimento">
         </div>
 
@@ -124,7 +124,7 @@ $funcionaros ->linkWhatsFuncionario = $linkWhatsFuncionario;
             <label for="dataAdmissaoFuncionario">Data de Admissão</label>
             <input type="date" class="form-control2"  id="dataAdmissaoFuncionario" 
             name="dataAdmissaoFuncionario"  id="formGroupExampleInput"
-            value="<?php echo $funcionaros->dataAdmissaoFuncionario; ?>" 
+            value="<?php echo $funcionarios->dataAdmissaoFuncionario; ?>" 
             placeholder="Informe sua Data de Admissão" >
         </div>
 
@@ -139,9 +139,9 @@ $funcionaros ->linkWhatsFuncionario = $linkWhatsFuncionario;
             <!--  <input type="text" class="form-control" name="gpmuscular" id="gpmuscular" require> -->
 
             <select id="inputState" class="form-control" name="especialidadeFuncionario"
-             id="especialidadeFuncionario" value="<?php echo $funcionaros->especialidadeFuncionario; ?>">
+             id="especialidadeFuncionario" value="<?php echo $funcionarios->especialidadeFuncionario; ?>">
                 <option selected
-                value="<?php echo $funcionaros->especialidadeFuncionario; ?>"
+                value="<?php echo $funcionarios->especialidadeFuncionario; ?>"
                 >Categoria Funcionario</option>
                 <option>Persol Trainer</option>
                 <option>Professor Yoga</option>
@@ -160,9 +160,9 @@ $funcionaros ->linkWhatsFuncionario = $linkWhatsFuncionario;
                 <label for="inputState">Status</label>
                 <select id="inputState" class="form-control" name="statusFuncionario"
                  id="statusExercicio" require
-                 value="<?php echo $funcionaros->statusFuncionario; ?>">
+                 value="<?php echo $funcionarios->statusFuncionario; ?>">
                  >
-                    <option selected value="<?php echo $funcionaros->statusFuncionario; ?>">---</option>
+                    <option selected value="<?php echo $funcionarios->statusFuncionario; ?>">---</option>
                     <option>ATIVO</option>
                     <option>INATIVO</option>
                     <option>DESATIVO</option>
@@ -201,7 +201,7 @@ $funcionaros ->linkWhatsFuncionario = $linkWhatsFuncionario;
  
             carregar.onload = function(e){
                 imgFoto.src = e.target.result;
-               console.log(imgFoto.scr);
+              // console.log(imgFoto.scr);
             }
  
             carregar.readAsDataURL(arquivo);
