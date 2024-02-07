@@ -36,7 +36,7 @@ $lista = $funcionaros -> Listar();
 
     <link rel="stylesheet" href="css/resp.css">
 
-  cu
+  
 </head>
 
 <body>
