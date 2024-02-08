@@ -88,13 +88,5 @@ $(document).ready(function() {
 
   //AREA LOGin
 
-  function closeModal(){
-    closeModal.style.display ='none';
-  }
-
-  function carregarLogin(){
-    closeModal();
-    alert('Login bem-sucedido! Redicionando ...')
-  }
-
+  
 

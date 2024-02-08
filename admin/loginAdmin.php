@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login Admin</title>
 
     <link rel="stylesheet" href="../css/reset.css">
 
@@ -41,20 +41,20 @@
 
         <div class="form-group col-md-6">
             <label for="email">E-mail:</label>
-            <input type="email"   id="email" name="email"  placeholder="Informe seu E-mail" 
+            <input type="email"   id="emailAdm" name="emailAdm"  placeholder="Informe seu E-mail" 
             autocomplete="off"
             require>
             </div>
 
             <div class="form-group col-md-6">
-            <label for="senha">Senha</label>
+            <label for="password">Senha</label>
             <input type="password" class="form-control2" 
-            id="senha" name="senha" id="inputPassword4" placeholder="Informe sua Senha" require>
+            id="passwordAdm" name="passwordAdm"  placeholder="Informe sua Senha" require>
             </div>
         
             
 
-            <button type="button" onclick="carregarLoginAdmin()"> Área Login  </button>
+            <button type="button" onclick="carregarLoginAdmin()">Área Login</button>
           
 
         

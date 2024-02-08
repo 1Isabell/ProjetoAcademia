@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Admin</title>
+    <title>Login</title>
 
     <link rel="stylesheet" href="css/reset.css">
 
@@ -21,46 +21,40 @@
     
 <section class="contente">
 
-<div class="formulImg">
-    <img src="img/logoVivaBem.svg" alt="">
-    
-    <h1><span>Minha</span> Academia </h1>
-</div>
+    <div class="formulImg">
+        <img src="img/logoVivaBem.svg" alt="">
+        
+        <h1><span>Minha</span> Academia </h1>
+    </div>
 
-<div class="formularLogin" id="loginModal">
-    <h2>
-        Faça seu <span>Login </span> ou acesse dados 
-                <span>de parcerias</span>
-    </h2>
+<div class="formularLogin">
+        <h2>
+            Faça seu <span>Login </span> ou acesse dados 
+                    <span>de parcerias</span>
+        </h2>
 
-    <form id="loginFormA" id="loginModal">
+        <form id="loginForm" >
 
-    <div class="form-group col-md-6">
-          <label for="email">E-mail:</label>
-          <input type="email"   id="email" name="email"  placeholder="Informe seu E-mail" 
-          autocomplete="off"
-          require>
-        </div>
+            <div class="form-group col-md-6">
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email"  placeholder="Informe seu E-mail" 
+                
+                require>
+                </div>
 
-        <div class="form-group col-md-6">
-          <label for="senha">Senha</label>
-          <input type="password" class="form-control2" 
-           id="senha" name="senha" id="inputPassword4" placeholder="Informe sua Senha" require>
-        </div>
-      
+                <div class="form-group col-md-6">
+                <label for="password">Senha</label>
+                <input type="password" class="form-control2" 
+                id="password" name="password"  placeholder="Informe sua Senha" require>
+                </div>
+            
+                <!--BTN COM O TIPO BUTTON ONDE PERMITE A CONF DE BOTAO CRIAÇÃO DO ONCLICK QUE IRA SUBIR 
+                    UMA MENSAGEM AO CLICKAR -->
 
-        <!--BTN COM O TIPO BUTTON ONDE PERMITE A CONF DE BOTAO CRIAÇÃO DO ONCLICK QUE IRA SUBIR 
-            UMA MENSAGEM AO CLICKAR -->
+                <button type="button" onclick="carregarLogin()"> Área do Aluno  </button>
+        </form>
 
-        <button type="button" onclick="carregarLogin()"> Área do Aluno  </button>
-
-        <button type="button" onclick="carregarLoginAdmin()"> Área Funcionario  </button>
-          
-
-
-    
-    
-    </form>
+        <di class="msgLogin"> </di>
 
 
        

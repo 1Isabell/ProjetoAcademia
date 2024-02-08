@@ -4,7 +4,7 @@
 
 require_once('conexao.php');
 
-class AlunoClass{
+class AlunoClass {
  //ATRIBUTO DA CLASSE
 
 public $idAluno;
@@ -38,78 +38,117 @@ public function Listar(){
 
 //Cadastrar 
 //Onde vai trazer os parâmetros iguais do banco d dados, que quando fazer o cadastro no formulário também será realizado no banco de dados assim permitindo uma relação entre site e banco 
-public function CadastrarA(){
-
-    $query = "INSERT INTO tblalunos(    
-     nomeAluno, 
-     dataNascAluno, 
-     emailAluno, 
-     senhaAluno, 
-     dataCadAluno, 
-     statusAluno, 
-     fotoAluno)   
-     
-    VALUES ('". $this->nomeAluno."',
-    '". $this->dataNascAluno."',
-    '". $this->emailAluno."',
-    '". $this->senhaAluno."',
-    '". $this->dataCadAluno."',
-    '". $this->statusAluno."',
-    '". $this->fotoAluno."')";
-
-    $conn = Conexao::LigarConexao(); 
-    $conn->exec($query);
-    
-     echo " <script>document.location='index.php?p=aluno&aluno'</script>";
-    
-    }
-
-    //SEÇÃO RESPONSAVEL DE PASSAR AS INFROMAÇÕES DO BANCO DE DADOS PARA CAD
-
-    public function Carregar(){
-        $query = "SELECT * FROM tblalunos  WHERE idAluno = " . $this->idAluno;
+public function CadastrarA()
+    {
+        //inseri dados no banco
+        $query = "INSERT INTO tblalunos(nomeAluno,
+                                        dataNascAluno,
+                                        emailAluno,
+                                        statusAluno,
+                                        fotoAluno)
+                 VALUES ('" . $this->nomeAluno . "',
+                        '" . $this->dataNascAluno . "',
+                        '" . $this->emailAluno . "',
+                        '" . $this->statusAluno . "',
+                        '" . $this->fotoAluno . "')";
+        //faz conexao com o banco
         $conn = Conexao::LigarConexao();
-        $resultado = $conn->query($query);
-        $lista = $resultado->fetchAll();
-
-        foreach($lista as $linha){
-            $this->nomeAluno                = $linha['nomeAluno'];
-            $this->dataNascAluno                = $linha['dataNascAluno'];
-            $this->emailAluno                = $linha['emailAluno'];
-            $this->senhaAluno                = $linha['senhaAluno'];
-            $this->dataCadAluno                = $linha['dataCadAluno'];
-            $this->statusAluno                = $linha['statusAluno'];
-            $this->fotoAluno                = $linha['fotoAluno'];
-        }
-
+        $conn->exec($query);
+ 
+        //recarrega a pagina
+        echo "<script>document.location='index.php?p=alunos'</script>'";
     }
 
-    //SEÇÃO RESPONSAVEL DE PASSAR AS INFROMAÇÕES DO BANCO DE DADOS PARA ATUALIZAR
-    public function Atualizar() {
-        $query = "UPDATE tblalunos SET nomeAluno = '".$this->nomeAluno."',
-        dataNascAluno = '".$this->dataNascAluno."',
-        emailAluno      = '".$this->emailAluno."',
-        senhaAluno      = '".$this->senhaAluno."',
-        statusAluno     = '".$this->statusAluno."',
-        dataCadAluno    = '".$this->dataCadAluno."',
-        statusAluno     = '".$this->statusAluno."',
-        fotoAluno       = '".$this->fotoAluno."'
-                        WHERE tblalunos.idAluno = " . $this->idAluno;   
+public function Carregar()
+{
+    $query = "SELECT * FROM tblalunos  WHERE idAluno = " . $this->idAluno;
+    $conn = Conexao::LigarConexao();
+    $resultado = $conn->query($query);
+    $lista = $resultado->fetchAll();
 
-                        $conn = Conexao::LigarConexao();   
-                        $conn->query($query);
-                        echo "<script>document.location='index.php?p=aluno'</script>'";
-  
+    foreach($lista as $linha){
+        $this->nomeAluno                = $linha['nomeAluno'];
+        $this->dataNascAluno                = $linha['dataNascAluno'];
+        $this->emailAluno                = $linha['emailAluno'];
+        $this->senhaAluno                = $linha['senhaAluno'];
+        $this->dataCadAluno                = $linha['dataCadAluno'];
+        $this->statusAluno                = $linha['statusAluno'];
+        $this->fotoAluno                = $linha['fotoAluno'];
     }
+}
 
 
-    ///DESATIVAR    
-            public function desativar(){
-                $sql = "UPDATE tblalunos SET statusAluno = 'Desativado' WHERE idAluno = " . $this->idAluno;
-                $conn = Conexao::LigarConexao();
-                $conn->exec($sql);
+public function Atualizar() 
+{
+    $query = "UPDATE tblalunos SET nomeAluno = '".$this->nomeAluno."',
+    dataNascAluno = '".$this->dataNascAluno."',
+    emailAluno      = '".$this->emailAluno."',
+    senhaAluno      = '".$this->senhaAluno."',
+    statusAluno     = '".$this->statusAluno."',
+    dataCadAluno    = '".$this->dataCadAluno."',
+    statusAluno     = '".$this->statusAluno."',
+    fotoAluno       = '".$this->fotoAluno."'
+                    WHERE tblalunos.idAluno = " . $this->idAluno;   
 
-                echo " <script>document.location='index.php?p=aluno'</script>";
+                    $conn = Conexao::LigarConexao();   
+                    $conn->query($query);
+                    echo "<script>document.location='index.php?p=aluno'</script>'";
 
-            }
+}
+
+
+///DESATIVAR    
+public function desativar(){
+    $sql = "UPDATE tblalunos SET statusAluno = 'Desativado' WHERE idAluno = " . $this->idAluno;
+    $conn = Conexao::LigarConexao();
+    $conn->exec($sql);
+
+    echo " <script>document.location='index.php?p=aluno'</script>";
+
+}
+
+public function verificarLogin(){
+    $sql = "SELECT * FROM tblalunos     
+            WHERE emailAluno = '".$this ->emailAluno."' and     
+            senhaAluno = '".$this ->senhaAluno."'";   
+
+    $conn = Conexao::LigarConexao();       
+    $resultado = $conn->query($sql);         
+    $aluno = $resultado->fetch();         
+    
+    if($aluno){
+        return $aluno['idAluno'];
+    }
+    else{
+        return false;
+    }
+   
+}
+
+
+
 }//Fim da Classe Aluno
+
+if(isset($_POST['email'])){
+
+    $aluno = new AlunoClass();
+
+    $emailLogin = $_POST['email'];
+    $senhaLogin  = $_POST['password'];
+
+    $aluno ->emailAluno = $emailLogin;
+    $aluno ->senhaAluno = $senhaLogin;
+
+    if($idAluno = $aluno -> verificarLogin()){
+       
+        session_start();
+        $_SESSION['idAluno'] = $idAluno;
+        echo json_encode(['success' => true, 'message' => 'Login foi realizado com sucesso', 'idAluno' => $idAluno]);
+    }
+    else{
+        echo json_encode(['sucess' => false, 'message' => 'Login  não foi realizado, E-mail ou Senha invalida']);
+    }
+
+
+}
+

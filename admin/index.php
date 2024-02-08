@@ -78,6 +78,17 @@
                     <!--echo  '<h2>'.$pagina. '<h2>';-->
                     <?php
 
+                    session_start();
+
+                    if(isset($_SESSION['idAluno'])){
+                        echo "Cheguei Aqui";
+                    }
+                    else{
+                        header("locatio:http://localhost/ti21/");
+                        exit();
+                    }
+
+
                     $pagina = @$_GET['p'];
 
                     switch ($pagina) {
